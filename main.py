@@ -19,9 +19,10 @@ def handle_command(command, channel):
         returns back what it needs for clarification.
     '''
 
+    response = ''
     if command.startswith('play id '):
         response = functions.play_by_id(command[7:].strip())
-    if command.startswith('play '):
+    elif command.startswith('play '):
         response = functions.play_by_key(command[4:].strip())
     if command.startswith('replay'):
         response = functions.replay()
